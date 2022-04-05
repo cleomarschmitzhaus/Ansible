@@ -1,0 +1,10 @@
+---
+- hosts: lojas
+  become: yes
+  tasks:
+  - name: Export http
+    shell: export http_proxy="http://tinet:c3rt3l,9191.@proxy.certel.com.br:8080"
+  - name: Export https
+    shell: export https_proxy="https://tinet:c3rt3l,9191.@proxy.certel.com.br:8080"
+  - name: update
+    shell: apt update

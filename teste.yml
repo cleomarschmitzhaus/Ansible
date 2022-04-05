@@ -1,0 +1,9 @@
+--- #Sempre inicia com esses três traços
+  - name: check-vim #Play
+    remote_user: root 
+    hosts: lojas #Grupo ou All
+    tasks: #Task
+      - name: garantir que o vim esteja lá
+        apt: #Module
+          name: vim
+          state: latest #estado
