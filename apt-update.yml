@@ -1,5 +1,5 @@
 ---
-- hosts: lojas
+- hosts: host
   remote_user: root
 
   tasks:
@@ -7,8 +7,8 @@
   - name: "EXPORT"
     command: "{{ item }}"
     with_items:
-    - export http_proxy="http://tinet:c3rt3l,9191.@proxy.certel.com.br:8080"
-    - export https_proxy="https://tinet:c3rt3l,9191.@proxy.certel.com.br:8080"
+    - export http_proxy="http://user:passwd.@proxy.com.br:port"
+    - export https_proxy="https://user:passwd.@proxy.com.br:port"
 
   - name: "apt-get update"
     apt: update_cache=yes
